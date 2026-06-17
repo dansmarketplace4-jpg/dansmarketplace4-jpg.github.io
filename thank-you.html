@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Dans Marketplace</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
+        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+        .card { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .success-icon { font-size: 4em; margin-bottom: 20px; }
+        h1 { color: #0f172a; margin-bottom: 15px; font-size: 2em; }
+        p { color: #64748b; margin-bottom: 15px; font-size: 1.05em; }
+        .download-section { background: #f1f5f9; border-radius: 12px; padding: 25px; margin: 25px 0; text-align: left; }
+        .download-section h2 { color: #0f172a; margin-bottom: 15px; font-size: 1.2em; }
+        .download-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+        .download-item:last-child { border-bottom: none; }
+        .download-name { color: #0f172a; font-weight: 500; }
+        .download-btn { background: #3b82f6; color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: 600; }
+        .download-btn:hover { background: #2563eb; }
+        .note { background: #fef3c7; border-radius: 8px; padding: 15px; margin-top: 20px; font-size: 0.9em; color: #92400e; }
+        .back-btn { display: inline-block; margin-top: 25px; color: #3b82f6; text-decoration: none; font-weight: 600; }
+        .back-btn:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="success-icon">✅</div>
+            <h1>Thank You for Your Purchase!</h1>
+            <p>Your payment has been processed successfully. Below are your download links.</p>
+            
+            <div class="download-section">
+                <h2>📥 Your Downloads</h2>
+                <div id="downloads">
+                    <p style="color: #64748b;">Loading your products...</p>
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>Important:</strong> Save these download links. You'll also receive them via email at the address associated with your PayPal account.
+            </div>
+            
+            <a href="/" class="back-btn">← Back to Store</a>
+        </div>
+    </div>
+    
+    <script>
+        // Get product from URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product');
+        
+        const products = {
+            '50 Blog Post Templates': { price: 17, file: '50_blog_templates.md' },
+            'Social Media Content Calendar': { price: 12, file: 'social_media_calendar.md' },
+            'Cold Email Templates Pack': { price: 9, file: 'cold_email_templates.md' },
+            'Website Copy Templates': { price: 14, file: 'blog_templates.md' },
+            'AI Content Prompts Pack': { price: 19, file: 'ai_prompts_pack.md' },
+            'SEO Starter Kit': { price: 15, file: 'seo-starter-kit.md' }
+        };
+        
+        const downloadsDiv = document.getElementById('downloads');
+        
+        if (product && products[product]) {
+            const p = products[product];
+            downloadsDiv.innerHTML = `
+                <div class="download-item">
+                    <span class="download-name">${product}</span>
+                    <a href="/products/${p.file}" class="download-btn" download>Download</a>
+                </div>
+            `;
+        } else {
+            // Show all products (if purchased bundle or direct access)
+            let html = '';
+            for (const [name, info] of Object.entries(products)) {
+                html += `
+                    <div class="download-item">
+                        <span class="download-name">${name}</span>
+                        <a href="/products/${info.file}" class="download-btn" download>Download</a>
+                    </div>
+                `;
+            }
+            downloadsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
