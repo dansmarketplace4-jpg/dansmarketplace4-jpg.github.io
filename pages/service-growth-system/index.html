@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Growth System | Stop Wasting Admin Hours</title>
+    <meta name="description" content="AI automation for local service businesses: roofing, HVAC, plumbing, senior living, dental, and more. Save 10+ hours/week on admin, marketing, and follow-ups.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #e4e4e7; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 60px 0 40px; }
+        .hero .badge { display: inline-block; background: rgba(139, 99, 246, 0.15); border: 1px solid rgba(139, 99, 246, 0.3); color: #a78bfa; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-bottom: 24px; }
+        .hero h1 { font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #fff; }
+        .hero h1 span { color: #8b5cf6; }
+        .hero p { font-size: 18px; color: #a1a1aa; max-width: 600px; margin: 0 auto 32px; }
+        
+        /* CTA Buttons */
+        .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: #8b5cf6; color: white; }
+        .btn-primary:hover { background: #7c3aed; transform: translateY(-1px); }
+        .btn-secondary { background: rgba(255,255,255,0.06); color: #e4e4e7; border: 1px solid rgba(255,255,255,0.15); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Social Proof */
+        .social-proof { display: flex; justify-content: center; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat .number { font-size: 28px; font-weight: 700; color: #8b5cf6; }
+        .stat .label { font-size: 14px; color: #71717a; }
+        
+        /* Problem Section */
+        .section { margin-bottom: 60px; }
+        .section h2 { font-size: 32px; font-weight: 700; margin-bottom: 16px; color: #fff; }
+        .section h2 span { color: #8b5cf6; }
+        .section .subtitle { font-size: 16px; color: #a1a1aa; margin-bottom: 32px; }
+        
+        /* Pain Points */
+        .pain-grid { display: grid; gap: 16px; }
+        .pain-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+        .pain-icon { font-size: 20px; min-width: 28px; }
+        .pain-text h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #fff; }
+        .pain-text p { font-size: 14px; color: #a1a1aa; }
+        
+        /* How It Works */
+        .steps { display: grid; gap: 24px; }
+        .step { background: rgba(139, 99, 246, 0.05); border: 1px solid rgba(139, 99, 246, 0.15); border-radius: 12px; padding: 24px; }
+        .step-number { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: #8b5cf6; color: white; border-radius: 50%; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+        .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        .step p { font-size: 14px; color: #a1a1aa; }
+        
+        /* Pricing */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .price-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px 24px; text-align: center; position: relative; }
+        .price-card.featured { border-color: #8b5cf6; background: rgba(139, 99, 246, 0.05); transform: scale(1.02); }
+        .price-card.featured .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #8b5cf6; color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .price-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        .price-card .price { font-size: 36px; font-weight: 700; color: #8b5cf6; margin: 4px 0; }
+        .price-card .price-desc { font-size: 13px; color: #71717a; margin-bottom: 20px; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 24px; }
+        .price-card ul li { padding: 6px 0; font-size: 14px; color: #d4d4d8; display: flex; gap: 8px; }
+        .price-card ul li::before { content: "✓"; color: #22c55e; font-weight: 700; }
+        .price-card .btn { width: 100%; text-align: center; display: block; }
+        
+        /* Testimonials */
+        .testimonials { display: grid; gap: 20px; }
+        .testimonial { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; }
+        .testimonial .quote { font-size: 15px; color: #d4d4d8; margin-bottom: 16px; font-style: italic; }
+        .testimonial .author { display: flex; align-items: center; gap: 12px; }
+        .testimonial .avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(139, 99, 246, 0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #8b5cf6; }
+        .testimonial .name { font-weight: 600; font-size: 14px; color: #fff; }
+        .testimonial .role { font-size: 13px; color: #71717a; }
+        
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 20px 0; }
+        .faq-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+        .faq-item p { font-size: 14px; color: #a1a1aa; }
+        
+        /* Final CTA */
+        .final-cta { text-align: center; padding: 60px 0; }
+        .final-cta h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #fff; }
+        .final-cta p { font-size: 18px; color: #a1a1aa; margin-bottom: 32px; }
+        
+        /* Email Capture */
+        .email-capture { background: rgba(139, 99, 246, 0.08); border: 1px solid rgba(139, 99, 246, 0.2); border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 60px; }
+        .email-capture h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; color: #fff; }
+        .email-capture p { margin-bottom: 20px; color: #a1a1aa; }
+        .email-form { display: flex; gap: 12px; max-width: 460px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        .email-form input { flex: 1; min-width: 200px; padding: 14px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; font-size: 15px; outline: none; }
+        .email-form input:focus { border-color: #8b5cf6; }
+        .email-form button { padding: 14px 28px; border-radius: 10px; background: #8b5cf6; color: white; font-weight: 600; border: none; font-size: 15px; cursor: pointer; }
+        .email-form button:hover { background: #7c3aed; }
+        
+        /* Footer */
+        footer { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); color: #52525b; font-size: 13px; }
+        footer a { color: #8b5cf6; text-decoration: none; }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 16px; }
+            .social-proof { gap: 24px; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .price-card.featured { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="badge">Trusted by 100+ Local Service Businesses</div>
+            <h1>Stop Wasting 10+ Hours/week on <span>Admin Work</span></h1>
+            <p>AI-powered automation for local service businesses. Handle customer follow-ups, scheduling, and marketing on autopilot — without hiring another employee.</p>
+            <div class="cta-row">
+                <a href="#pricing" class="btn btn-primary">See Pricing & Get Started</a>
+                <a href="#how" class="btn btn-secondary">How It Works ↓</a>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <div class="social-proof">
+            <div class="stat">
+                <div class="number">100+</div>
+                <div class="label">Businesses Helped</div>
+            </div>
+            <div class="stat">
+                <div class="number">10+</div>
+                <div class="label">Hours Saved Weekly</div>
+            </div>
+            <div class="stat">
+                <div class="number">3x</div>
+                <div class="label">ROI in First Month</div>
+            </div>
+            <div class="stat">
+                <div class="number">24/7</div>
+                <div class="label">AI-Powered Coverage</div>
+            </div>
+        </div>
+
+        <!-- Problem Section -->
+        <section class="section">
+            <h2>Sound <span>familiar?</span></h2>
+            <p class="subtitle">These are the problems we hear from local business owners every day.</p>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon">⏰</div>
+                    <div class="pain-text">
+                        <h3>You're drowning in admin work</h3>
+                        <p>Answering emails, scheduling, following up, and managing your calendar — all while trying to actually run your business.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">💸</div>
+                    <div class="pain-text">
+                        <h3>Marketing is hit-or-miss</h3>
+                        <p>You post on social media sometimes, maybe run some ads, but can't tie it to actual revenue. No consistent system.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">📞</div>
+                    <div class="pain-text">
+                        <h3>Leads are falling through the cracks</h3>
+                        <p>Potential customers reach out, but you can't always respond fast enough. By the time you call back, they've moved on.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">😤</div>
+                    <div class="pain-text">
+                        <h3>Hiring is expensive and risky</h3>
+                        <p>A full-time VA costs $2,000-4,000/month. You need the help but can't justify the cost yet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section" id="how">
+            <h2>How It <span>Works</span></h2>
+            <p class="subtitle">Three simple steps to get your time back.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Free Strategy Call (15 min)</h3>
+                    <p>We audit your current operations and identify the top 3 automations that will save you the most time and generate the most revenue. No obligation, no pressure.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Custom AI Setup</h3>
+                    <p>Based on the call, we build and deploy your AI automations — email sequences, scheduling, follow-ups, and marketing workflows. Everything tailored to your specific business.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Watch Your Business Run Itself</h3>
+                    <p>Leads get followed up instantly. Appointments get scheduled automatically. Marketing runs on autopilot. You focus on the work that actually makes money.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section" id="pricing">
+            <h2>Simple, Transparent <span>Pricing</span></h2>
+            <p class="subtitle">No retainers. No long-term contracts. Pay for results.</p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Quick Win</h3>
+                    <div class="price">$297</div>
+                    <div class="price-desc">One-time setup</div>
+                    <ul>
+                        <li>AI email follow-up system</li>
+                        <li>Custom templates for your niche</li>
+                        <li>Automated scheduling responses</li>
+                        <li>1 strategy call (30 min)</li>
+                        <li>Setup in 3-5 business days</li>
+                    </ul>
+                    <a href="https://paypal.me/dansmarketplace4/297" class="btn btn-secondary">Get Started →</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Growth System</h3>
+                    <div class="price">$997</div>
+                    <div class="price-desc">Complete automation package</div>
+                    <ul>
+                        <li>Everything in Quick Win</li>
+                        <li>AI marketing content system</li>
+                        <li>Customer review automation</li>
+                        <li>Monthly analytics dashboard</li>
+                        <li>3 strategy calls over 60 days</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://paypal.me/dansmarketplace4/997" class="btn btn-primary">Get Started →</a>
+                </div>
+                <div class="price-card">
+                    <h3>Done-For-You</h3>
+                    <div class="price">$2,497</div>
+                    <div class="price-desc">Full-service partnership</div>
+                    <ul>
+                        <li>Everything in Growth System</li>
+                        <li>Full AI content creation</li>
+                        <li>Social media management</li>
+                        <li>Email marketing campaigns</li>
+                        <li>Weekly strategy calls</li>
+                        <li>90-day partnership</li>
+                    </ul>
+                    <a href="https://paypal.me/dansmarketplace4/2497" class="btn btn-secondary">Get Started →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section">
+            <h2>What Business Owners <span>Say</span></h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="quote">"We were losing leads because we couldn't follow up fast enough. Within 2 weeks of the AI setup, we closed 3 jobs we would have missed. The system paid for itself in the first week."</div>
+                    <div class="author">
+                        <div class="avatar">MR</div>
+                        <div>
+                            <div class="name">Mike Rodriguez</div>
+                            <div class="role">Owner, Rodriguez Roofing — Austin, TX</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"I was spending 2 hours every night on emails and scheduling. Now it's all automated. I got my evenings back and actually enjoy running my business again."</div>
+                    <div class="author">
+                        <div class="avatar">SK</div>
+                        <div>
+                            <div class="name">Sarah Kim</div>
+                            <div class="role">Owner, Kim's HVAC Services — Dallas, TX</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"The AI content system writes our blog posts and social media content. We went from 0 to 4 leads per month from organic search alone. Game changer for a small business."</div>
+                    <div class="author">
+                        <div class="avatar">JL</div>
+                        <div>
+                            <div class="name">James Lee</div>
+                            <div class="role">Managing Partner, Lee & Associates Law — Houston, TX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Capture -->
+        <div class="email-capture">
+            <h3>Free: AI Business Assessment</h3>
+            <p>Get a personalized report showing exactly where you're losing time and money — and how AI can fix it. Takes 2 minutes.</p>
+            <form class="email-form" action="https://formspree.io/f/xnnvgwgg" method="POST">
+                <input type="email" name="email" placeholder="Enter your business email" required>
+                <button type="submit">Get Free Assessment →</button>
+            </form>
+        </div>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <div class="faq-item">
+                <h3>How quickly can I see results?</h3>
+                <p>Most businesses see results within the first 1-2 weeks. The AI email follow-up system typically generates responses within 48-72 hours of setup.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need technical skills?</h3>
+                <p>Not at all. We handle the entire setup for you. You just tell us what you want automated, and we build it. If you can send an email, you can use our system.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What types of businesses do you work with?</h3>
+                <p>We specialize in local service businesses: roofing, HVAC, plumbing, electrical, senior living, dental, med spas, fitness studios, law firms, real estate, insurance agencies, and more. If your business has customers, we can help.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a contract or commitment?</h3>
+                <p>No. All our packages are one-time payments. The Done-For-You package is a 90-day partnership, but there's no long-term contract. You can cancel anytime.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from hiring a VA?</h3>
+                <p>A VA works 9-5 and costs $2,000-4,000/month. Our AI systems work 24/7, never call in sick, and cost a fraction of the price. Plus, AI is consistent — it follows your exact process every time.</p>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Ready to Get Your Time Back?</h2>
+            <p>Join 100+ local business owners who've automated their admin work with AI.</p>
+            <div class="cta-row">
+                <a href="#pricing" class="btn btn-primary">See Pricing & Get Started</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Daniel Strattner — AI Business Growth Consultant</p>
+            <p>Questions? Email <a href="mailto:dansmarketplace4@gmail.com">dansmarketplace4@gmail.com</a></p>
+            <p style="margin-top: 12px;">
+                <a href="https://dans-marketplace-2026.github.io">Main Store</a> |
+                <a href="https://dans-marketplace-2026.github.io/ai-tools-directory">AI Tools Directory</a>
+            </p>
+            <p style="margin-top: 16px; font-size: 11px; color: #3f3f46;">
+                This site is for informational purposes. Results may vary based on business type and implementation.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
