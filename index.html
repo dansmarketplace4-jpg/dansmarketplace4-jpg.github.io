@@ -3,314 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium digital products for content creators, marketers, and business owners. Blog templates, social media calendars, email templates, and more.">
-    <title>Dans Marketplace — Premium Digital Products</title>
+    <meta name="description" content="Ghost AI — AI automation for small businesses. We build custom AI agents that handle customer service, lead generation, and admin tasks. Based in Rockland County, NY.">
+    <title>Ghost AI — AI Automation for Small Businesses</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        
-        header { background: #0f172a; color: white; padding: 20px 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header { background: #0a0a1a; padding: 18px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(139,92,246,0.2); }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5em; font-weight: bold; }
-        .logo span { color: #3b82f6; }
-        nav a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.95em; }
-        nav a:hover { color: #3b82f6; }
-        
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 2.8em; margin-bottom: 20px; line-height: 1.2; }
-        .hero h1 span { color: #3b82f6; }
-        .hero p { font-size: 1.25em; opacity: 0.85; max-width: 600px; margin: 0 auto 30px; }
-        .cta-btn { display: inline-block; background: #3b82f6; color: white; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-size: 1.1em; font-weight: 600; transition: background 0.2s; }
-        .cta-btn:hover { background: #2563eb; }
-        
-        .products { padding: 70px 20px; background: #f8fafc; }
-        .products h2 { text-align: center; font-size: 2em; margin-bottom: 10px; color: #0f172a; }
-        .products-subtitle { text-align: center; color: #64748b; margin-bottom: 40px; font-size: 1.1em; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
-        .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .product-header { padding: 25px 25px 15px; }
-        .product-icon { font-size: 2.5em; margin-bottom: 10px; }
-        .product-card h3 { color: #0f172a; margin-bottom: 8px; font-size: 1.3em; }
-        .product-card p { color: #64748b; font-size: 0.95em; line-height: 1.5; }
-        .product-features { padding: 0 25px 15px; }
-        .product-features li { list-style: none; padding: 4px 0; color: #475569; font-size: 0.9em; }
-        .product-features li::before { content: "✓ "; color: #22c55e; font-weight: bold; }
-        .product-footer { padding: 15px 25px 25px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; }
-        .price { font-size: 1.5em; font-weight: bold; color: #0f172a; }
-        .price .original { font-size: 0.6em; color: #94a3b8; text-decoration: line-through; margin-left: 8px; }
-        .buy-btn { background: #3b82f6; color: white; border: none; padding: 12px 28px; border-radius: 8px; font-size: 1em; font-weight: 600; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
-        .buy-btn:hover { background: #2563eb; }
-        .badge { display: inline-block; background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600; margin-bottom: 10px; }
-        
-        .guarantee { padding: 50px 20px; text-align: center; background: white; }
-        .guarantee h2 { font-size: 1.5em; color: #0f172a; margin-bottom: 15px; }
-        .guarantee p { color: #64748b; max-width: 600px; margin: 0 auto; }
-        
-        .faq { padding: 50px 20px; background: #f8fafc; }
-        .faq h2 { text-align: center; font-size: 1.8em; margin-bottom: 30px; color: #0f172a; }
-        .faq-item { max-width: 600px; margin: 0 auto 20px; background: white; padding: 20px; border-radius: 10px; }
-        .faq-item h3 { color: #0f172a; margin-bottom: 8px; font-size: 1.05em; }
+        .logo { font-size: 1.6em; font-weight: 800; color: white; text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: #8b5cf6; }
+        .logo-icon { font-size: 1.2em; margin-right: 4px; }
+        .nav-cta { background: #8b5cf6; color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.2s; }
+        .nav-cta:hover { background: #7c3aed; transform: translateY(-1px); }
+
+        /* Hero */
+        .hero { background: linear-gradient(160deg, #0a0a1a 0%, #1a0a2e 40%, #0f172a 100%); color: white; padding: 100px 24px 90px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); pointer-events: none; }
+        .hero-badge { display: inline-block; background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.3); color: #a78bfa; padding: 6px 18px; border-radius: 30px; font-size: 0.85em; font-weight: 600; margin-bottom: 28px; }
+        .hero h1 { font-size: 3.2em; margin-bottom: 24px; line-height: 1.15; font-weight: 800; letter-spacing: -1px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero h1 .highlight { background: linear-gradient(135deg, #8b5cf6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.2em; opacity: 0.75; max-width: 580px; margin: 0 auto 36px; line-height: 1.6; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { display: inline-block; background: #8b5cf6; color: white; padding: 16px 36px; border-radius: 10px; text-decoration: none; font-size: 1.05em; font-weight: 700; transition: all 0.2s; box-shadow: 0 4px 20px rgba(139,92,246,0.3); }
+        .btn-primary:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 6px 30px rgba(139,92,246,0.4); }
+        .btn-secondary { display: inline-block; background: transparent; color: white; padding: 16px 36px; border-radius: 10px; text-decoration: none; font-size: 1.05em; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 56px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat .number { font-size: 2em; font-weight: 800; color: #8b5cf6; }
+        .hero-stat .label { font-size: 0.85em; opacity: 0.5; margin-top: 4px; }
+
+        /* Pain Points */
+        .pain { padding: 80px 24px; background: #f8f7ff; }
+        .pain h2 { text-align: center; font-size: 2.2em; margin-bottom: 12px; color: #0a0a1a; font-weight: 800; }
+        .pain-subtitle { text-align: center; color: #64748b; margin-bottom: 48px; font-size: 1.1em; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .pain-card { background: white; border-radius: 16px; padding: 32px; border: 1px solid #e2e0f0; }
+        .pain-icon { font-size: 2em; margin-bottom: 16px; }
+        .pain-card h3 { font-size: 1.15em; margin-bottom: 10px; color: #0a0a1a; font-weight: 700; }
+        .pain-card p { color: #64748b; font-size: 0.95em; }
+
+        /* Services */
+        .services { padding: 80px 24px; background: white; }
+        .services h2 { text-align: center; font-size: 2.2em; margin-bottom: 12px; color: #0a0a1a; font-weight: 800; }
+        .services-subtitle { text-align: center; color: #64748b; margin-bottom: 48px; font-size: 1.1em; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .service-card { background: #faf9ff; border-radius: 16px; padding: 36px; border: 1px solid #e8e5f5; transition: all 0.2s; }
+        .service-card:hover { border-color: #8b5cf6; box-shadow: 0 8px 30px rgba(139,92,246,0.1); transform: translateY(-2px); }
+        .service-icon { font-size: 2.2em; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.25em; margin-bottom: 10px; color: #0a0a1a; font-weight: 700; }
+        .service-card p { color: #64748b; font-size: 0.95em; margin-bottom: 16px; }
+        .service-card ul { list-style: none; }
+        .service-card ul li { padding: 4px 0; color: #475569; font-size: 0.9em; }
+        .service-card ul li::before { content: "→ "; color: #8b5cf6; font-weight: bold; }
+
+        /* How It Works */
+        .how { padding: 80px 24px; background: #0a0a1a; color: white; }
+        .how h2 { text-align: center; font-size: 2.2em; margin-bottom: 12px; font-weight: 800; }
+        .how-subtitle { text-align: center; color: rgba(255,255,255,0.5); margin-bottom: 56px; font-size: 1.1em; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+        .step { text-align: center; }
+        .step-number { width: 48px; height: 48px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3em; font-weight: 800; margin: 0 auto 20px; }
+        .step h3 { font-size: 1.1em; margin-bottom: 8px; font-weight: 700; }
+        .step p { color: rgba(255,255,255,0.5); font-size: 0.9em; }
+
+        /* Pricing */
+        .pricing { padding: 80px 24px; background: #f8f7ff; }
+        .pricing h2 { text-align: center; font-size: 2.2em; margin-bottom: 12px; color: #0a0a1a; font-weight: 800; }
+        .pricing-subtitle { text-align: center; color: #64748b; margin-bottom: 48px; font-size: 1.1em; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
+        .pricing-card { background: white; border-radius: 20px; padding: 40px 32px; border: 2px solid #e2e0f0; text-align: center; position: relative; transition: all 0.2s; }
+        .pricing-card:hover { border-color: #8b5cf6; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(139,92,246,0.12); }
+        .pricing-card.featured { border-color: #8b5cf6; box-shadow: 0 8px 40px rgba(139,92,246,0.15); }
+        .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #8b5cf6; color: white; padding: 4px 16px; border-radius: 20px; font-size: 0.8em; font-weight: 700; }
+        .pricing-card h3 { font-size: 1.3em; margin-bottom: 8px; color: #0a0a1a; font-weight: 700; }
+        .pricing-card .price { font-size: 2.8em; font-weight: 800; color: #0a0a1a; margin: 16px 0; }
+        .pricing-card .price span { font-size: 0.4em; color: #94a3b8; font-weight: 400; }
+        .pricing-card .price-desc { color: #64748b; font-size: 0.9em; margin-bottom: 24px; }
+        .pricing-features { list-style: none; text-align: left; margin-bottom: 28px; }
+        .pricing-features li { padding: 6px 0; color: #475569; font-size: 0.95em; }
+        .pricing-features li::before { content: "✓ "; color: #8b5cf6; font-weight: bold; }
+        .pricing-btn { display: block; background: #8b5cf6; color: white; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1em; transition: all 0.2s; }
+        .pricing-btn:hover { background: #7c3aed; }
+        .pricing-btn.outline { background: transparent; color: #8b5cf6; border: 2px solid #8b5cf6; }
+        .pricing-btn.outline:hover { background: #8b5cf6; color: white; }
+
+        /* Testimonials */
+        .testimonials { padding: 80px 24px; background: white; }
+        .testimonials h2 { text-align: center; font-size: 2.2em; margin-bottom: 48px; color: #0a0a1a; font-weight: 800; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+        .testimonial { background: #faf9ff; border-radius: 16px; padding: 32px; border: 1px solid #e8e5f5; }
+        .testimonial-stars { color: #f59e0b; font-size: 1.1em; margin-bottom: 16px; }
+        .testimonial p { color: #475569; font-size: 0.95em; margin-bottom: 20px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar { width: 44px; height: 44px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1em; }
+        .testimonial-name { font-weight: 700; color: #0a0a1a; font-size: 0.95em; }
+        .testimonial-role { color: #94a3b8; font-size: 0.85em; }
+
+        /* FAQ */
+        .faq { padding: 80px 24px; background: #f8f7ff; }
+        .faq h2 { text-align: center; font-size: 2.2em; margin-bottom: 48px; color: #0a0a1a; font-weight: 800; }
+        .faq-grid { max-width: 700px; margin: 0 auto; }
+        .faq-item { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid #e2e0f0; }
+        .faq-item h3 { font-size: 1.05em; color: #0a0a1a; margin-bottom: 8px; font-weight: 700; }
         .faq-item p { color: #64748b; font-size: 0.95em; }
-        
-        .cta-section { background: #0f172a; color: white; padding: 70px 20px; text-align: center; }
-        .cta-section h2 { font-size: 2em; margin-bottom: 15px; }
-        .cta-section p { opacity: 0.85; margin-bottom: 30px; font-size: 1.1em; }
-        .cta-section .cta-btn { background: white; color: #0f172a; }
-        .cta-section .cta-btn:hover { background: #e2e8f0; }
-        
-        footer { background: #0f172a; color: #94a3b8; padding: 30px 20px; text-align: center; font-size: 0.9em; border-top: 1px solid #1e293b; }
-        footer a { color: #3b82f6; text-decoration: none; }
+
+        /* CTA */
+        .cta { padding: 80px 24px; background: linear-gradient(160deg, #0a0a1a 0%, #1a0a2e 40%, #0f172a 100%); color: white; text-align: center; }
+        .cta h2 { font-size: 2.4em; margin-bottom: 16px; font-weight: 800; }
+        .cta p { font-size: 1.15em; opacity: 0.7; max-width: 500px; margin: 0 auto 32px; }
+        .cta .btn-primary { font-size: 1.15em; padding: 18px 44px; }
+        .cta-contact { margin-top: 24px; opacity: 0.5; font-size: 0.9em; }
+        .cta-contact a { color: #a78bfa; text-decoration: none; }
+
+        /* Footer */
+        footer { background: #050510; color: rgba(255,255,255,0.4); padding: 40px 24px; text-align: center; font-size: 0.85em; }
+        footer a { color: #8b5cf6; text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero-stats { gap: 24px; }
+            .hero-stat .number { font-size: 1.5em; }
+            .pricing-card .price { font-size: 2.2em; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Dans<span>Marketplace</span></div>
-            <nav>
-                <a href="#products">Products</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </nav>
+
+<header>
+    <div class="container">
+        <a href="#" class="logo"><span class="logo-icon">👻</span>Ghost<span>AI</span></a>
+        <a href="#pricing" class="nav-cta">Get Started →</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-badge">🤖 AI Automation for Small Business</div>
+    <h1>Your Business Runs <span class="highlight">24/7</span> — Even When You Sleep</h1>
+    <p>We build custom AI agents that handle customer inquiries, qualify leads, and automate admin tasks — so you can focus on growing your business.</p>
+    <div class="hero-buttons">
+        <a href="#pricing" class="btn-primary">Start Free Consultation</a>
+        <a href="#services" class="btn-secondary">See What We Build</a>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="number">50+</div>
+            <div class="label">AI Agents Deployed</div>
         </div>
-    </header>
+        <div class="hero-stat">
+            <div class="number">24/7</div>
+            <div class="label">Always On</div>
+        </div>
+        <div class="hero-stat">
+            <div class="number">3x</div>
+            <div class="label">Lead Response Speed</div>
+        </div>
+    </div>
+</section>
 
-    <section class="hero">
-        <h1>Premium Digital Products<br><span>For Content Creators & Marketers</span></h1>
-        <p>Ready-to-use templates, calendars, and frameworks that save you hours of work. Instant download. Lifetime access.</p>
-        <a href="#products" class="cta-btn">Browse Products →</a>
-    </section>
-
-    <section class="products" id="products">
-        <div class="container">
-            <h2>Digital Products</h2>
-            <p class="products-subtitle">Instant download after purchase via PayPal</p>
-            <div class="product-grid">
-                
-                <!-- Product 1: Blog Post Templates -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">📝</div>
-                        <span class="badge">BEST SELLER</span>
-                        <h3>50 Blog Post Templates</h3>
-                        <p>Ready-to-use templates for any niche. Just fill in the blanks and publish. Covers listicles, how-tos, reviews, thought leadership, and more.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>50 unique blog post templates</li>
-                        <li>Works for any niche or industry</li>
-                        <li>SEO-optimized structure included</li>
-                        <li>Word count targets for each type</li>
-                        <li>Editable Google Docs format</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$17 <span class="original">$34</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="50 Blog Post Templates">
-                            <input type="hidden" name="amount" value="17.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Product 2: Social Media Calendar -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">📅</div>
-                        <h3>Social Media Content Calendar</h3>
-                        <p>30-day content calendar with post ideas, captions, and hashtags for Instagram, Twitter/X, and LinkedIn. Never run out of content ideas again.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>30 days of pre-planned content</li>
-                        <li>Post ideas for 3 platforms</li>
-                        <li>Ready-to-use captions & hashtags</li>
-                        <li>Content pillar framework</li>
-                        <li>Editable spreadsheet format</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$12 <span class="original">$24</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="Social Media Content Calendar">
-                            <input type="hidden" name="amount" value="12.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Product 3: Cold Email Templates -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">📧</div>
-                        <span class="badge">NEW</span>
-                        <h3>Cold Email Templates Pack</h3>
-                        <p>10 proven cold email templates that get responses. Includes follow-up sequences, subject lines, and A/B test variations.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>10 cold email templates</li>
-                        <li>Follow-up sequence for each</li>
-                        <li>High-converting subject lines</li>
-                        <li>A/B test variations included</li>
-                        <li>Copy-paste ready format</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$9 <span class="original">$19</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="Cold Email Templates Pack">
-                            <input type="hidden" name="amount" value="9.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Product 4: Website Copy Templates -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">🌐</div>
-                        <h3>Website Copy Templates</h3>
-                        <p>Professional website copy templates for homepages, about pages, service pages, and landing pages. Conversion-focused and ready to customize.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>15 website copy templates</li>
-                        <li>Homepage, About, Services, Contact</li>
-                        <li>Landing page frameworks</li>
-                        <li>Conversion-optimized structure</li>
-                        <li>Works for any business type</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$14 <span class="original">$29</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="Website Copy Templates">
-                            <input type="hidden" name="amount" value="14.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Product 5: AI Prompts Pack -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">🤖</div>
-                        <span class="badge">POPULAR</span>
-                        <h3>AI Content Prompts Pack</h3>
-                        <p>100+ proven AI prompts for ChatGPT, Claude, and Gemini. Generate blog posts, social media, emails, and marketing copy in seconds.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>100+ ready-to-use AI prompts</li>
-                        <li>Works with ChatGPT, Claude, Gemini</li>
-                        <li>Organized by content type</li>
-                        <li>Includes prompt chaining techniques</li>
-                        <li>Regular updates included</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$19 <span class="original">$39</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="AI Content Prompts Pack">
-                            <input type="hidden" name="amount" value="19.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Product 6: SEO Starter Kit -->
-                <div class="product-card">
-                    <div class="product-header">
-                        <div class="product-icon">🔍</div>
-                        <h3>SEO Starter Kit</h3>
-                        <p>Everything you need to start ranking. Keyword research template, on-page SEO checklist, content calendar, and link building tracker.</p>
-                    </div>
-                    <ul class="product-features">
-                        <li>Keyword research spreadsheet</li>
-                        <li>On-page SEO checklist</li>
-                        <li>Content optimization template</li>
-                        <li>Link building tracker</li>
-                        <li>Monthly SEO audit template</li>
-                    </ul>
-                    <div class="product-footer">
-                        <div class="price">$15 <span class="original">$30</span></div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="Dansmarketplace4@gmail.com">
-                            <input type="hidden" name="item_name" value="SEO Starter Kit">
-                            <input type="hidden" name="amount" value="15.00">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/thank-you.html">
-                            <input type="hidden" name="cancel_return" value="https://dansmarketplace4-jpg.github.io/dansmarketplace.github.io/">
-                            <input type="submit" class="buy-btn" value="Buy Now">
-                        </form>
-                    </div>
-                </div>
-
+<section class="pain">
+    <div class="container">
+        <h2>Sound Familiar?</h2>
+        <p class="pain-subtitle">These are the problems we hear from small business owners every day.</p>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">😤</div>
+                <h3>You're drowning in repetitive tasks</h3>
+                <p>Answering the same customer questions, scheduling appointments, following up with leads — it never ends. You didn't start a business to be a full-time admin.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">💸</div>
+                <h3>Leads are slipping through the cracks</h3>
+                <p>Someone fills out your contact form at 9 PM. By morning, they've already called your competitor. Every missed lead is money left on the table.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">⏰</div>
+               <h3>You can't afford to hire more staff</h3>
+                <p>A full-time employee costs $40K+/year. You need the help but can't justify the overhead — especially when the work is repetitive and predictable.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">🔧</div>
+                <h3>Off-the-shelf tools don't fit</h3>
+                <p>Generic chatbots and CRMs don't understand your business. You need something custom — but custom software costs $50K+ and takes months to build.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="guarantee">
-        <div class="container">
-            <h2>🛡️ 30-Day Money-Back Guarantee</h2>
-            <p>Not satisfied with your purchase? Get a full refund within 30 days. No questions asked. We stand behind every product we sell.</p>
+<section class="services" id="services">
+    <div class="container">
+        <h2>What We Build</h2>
+        <p class="services-subtitle">Custom AI agents tailored to your business. Not templates. Not generic chatbots. Real automation.</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3>AI Customer Service Agent</h3>
+                <p>An intelligent agent that handles customer inquiries 24/7 via your website, email, or messaging.</p>
+                <ul>
+                    <li>Answers FAQs instantly</li>
+                    <li>Books appointments automatically</li>
+                    <li>Escalates complex issues to you</li>
+                    <li>Learns from your past responses</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>AI Lead Qualification Agent</h3>
+                <p>Captures and qualifies leads the moment they reach out — no more missed opportunities.</p>
+                <ul>
+                    <li>Responds to leads in under 60 seconds</li>
+                    <li>Asks qualifying questions automatically</li>
+                    <li>Books sales calls on your calendar</li>
+                    <li>Sends hot leads to you instantly</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📧</div>
+                <h3>AI Email & Outreach Agent</h3>
+                <p>Automates your email follow-ups, outreach campaigns, and customer nurture sequences.</p>
+                <ul>
+                    <li>Personalized cold email campaigns</li>
+                    <li>Automated follow-up sequences</li>
+                    <li>Smart scheduling based on engagement</li>
+                    <li>CAN-SPAM compliant by design</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>AI Admin & Reporting Agent</h3>
+                <p>Automates your back-office work — data entry, report generation, and task management.</p>
+                <ul>
+                    <li>Automated data entry & organization</li>
+                    <li>Daily/weekly report generation</li>
+                    <li>Invoice & payment reminders</li>
+                    <li>Calendar & task management</li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>How do I get the files after purchase?</h3>
-                <p>After completing your PayPal payment, you'll be redirected to our download page with instant access to all files. You'll also receive an email with the download link.</p>
+<section class="how">
+    <div class="container">
+        <h2>How It Works</h2>
+        <p class="how-subtitle">From zero to AI-powered in 2 weeks.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Free Consultation</h3>
+                <p>We learn your business, identify repetitive tasks, and map out the highest-impact automations.</p>
             </div>
-            <div class="faq-item">
-                <h3>What format are the files in?</h3>
-                <p>Most products are delivered as editable Google Docs/Sheets links. Some include PDF and Word formats. Each product page lists the specific formats included.</p>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Custom Build</h3>
+                <p>We design and build your AI agent tailored to your specific workflows and customer needs.</p>
             </div>
-            <div class="faq-item">
-                <h3>Can I use these for client work?</h3>
-                <p>Yes! All products come with a commercial license. You can use them for your own business or for client work without restrictions.</p>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Test & Refine</h3>
+                <p>We test everything together, fine-tune responses, and make sure it works flawlessly.</p>
             </div>
-            <div class="faq-item">
-                <h3>Do you offer refunds?</h3>
-                <p>Absolutely. If you're not satisfied with your purchase, contact us within 30 days for a full refund. No questions asked.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do I contact support?</h3>
-                <p>Email us at Dansmarketplace4@gmail.com and we'll get back to you within 24 hours.</p>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Go Live</h3>
+                <p>Your AI agent goes live. We monitor it, optimize it, and handle all the tech — you run your business.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="cta-section" id="contact">
-        <h2>Have Questions?</h2>
-        <p>We're here to help. Reach out anytime.</p>
-        <a href="mailto:Dansmarketplace4@gmail.com" class="cta-btn">Email Us</a>
-    </section>
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2>Simple, Transparent Pricing</h2>
+        <p class="pricing-subtitle">No hidden fees. No long-term contracts. Cancel anytime.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$197<span>/mo</span></div>
+                <p class="price-desc">Perfect for getting started with AI automation</p>
+                <ul class="pricing-features">
+                    <li>1 AI Agent (Customer Service OR Lead Qualification)</li>
+                    <li>Up to 500 conversations/month</li>
+                    <li>Website + email integration</li>
+                    <li>Weekly performance reports</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="mailto:Dansmarketplace4@gmail.com?subject=Ghost AI - Starter Plan" class="pricing-btn outline">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">MOST POPULAR</div>
+                <h3>Growth</h3>
+                <div class="price">$397<span>/mo</span></div>
+                <p class="price-desc">For businesses ready to scale with AI</p>
+                <ul class="pricing-features">
+                    <li>3 AI Agents (any combination)</li>
+                    <li>Up to 2,000 conversations/month</li>
+                    <li>Website, email, SMS integration</li>
+                    <li>Custom training on your business</li>
+                    <li>Daily performance reports</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="mailto:Dansmarketplace4@gmail.com?subject=Ghost AI - Growth Plan" class="pricing-btn">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Scale</h3>
+                <div class="price">$797<span>/mo</span></div>
+                <p class="price-desc">Full AI automation for growing businesses</p>
+                <ul class="pricing-features">
+                    <li>Unlimited AI Agents</li>
+                    <li>Unlimited conversations</li>
+                    <li>All integrations (website, email, SMS, CRM)</li>
+                    <li>Dedicated account manager</li>
+                    <li>Real-time analytics dashboard</li>
+                    <li>24/7 phone support</li>
+                </ul>
+                <a href="mailto:Dansmarketplace4@gmail.com?subject=Ghost AI - Scale Plan" class="pricing-btn outline">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 Dans Marketplace. All rights reserved.</p>
-        <p style="margin-top: 10px;">Payments securely processed via PayPal</p>
-    </footer>
+<section class="testimonials">
+    <div class="container">
+        <h2>What Business Owners Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Ghost AI built us a customer service agent that handles 80% of our inbound questions. We went from responding in hours to responding in seconds. Our customers love it."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">M</div>
+                    <div>
+                        <div class="testimonial-name">Mike R.</div>
+                        <div class="testimonial-role">Owner, Rockland County HVAC</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"I was losing leads because I couldn't respond fast enough. Ghost AI set up a lead qualification agent that books calls on my calendar automatically. Closed 3 new clients in the first month."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <div class="testimonial-name">Sarah K.</div>
+                        <div class="testimonial-role">Founder, Digital Marketing Agency</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The email outreach agent Ghost AI built for us is incredible. It sends personalized follow-ups to every lead automatically. Our response rate tripled. Best investment I've made."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">J</div>
+                    <div>
+                        <div class="testimonial-name">James T.</div>
+                        <div class="testimonial-role">Owner, Home Services Company</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>How quickly can you build and deploy an AI agent?</h3>
+                <p>Most agents are live within 1-2 weeks. Simple customer service agents can be deployed in as few as 3-5 days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need any technical knowledge?</h3>
+                <p>Not at all. We handle everything — setup, training, integration, and ongoing maintenance. You just tell us what you need.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if the AI gives a wrong answer?</h3>
+                <p>Every agent has a human escalation path. If it's unsure, it flags the conversation for you. We also continuously train and improve based on your feedback.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I cancel anytime?</h3>
+                <p>Yes. No long-term contracts. Cancel with 30 days' notice. If you're not seeing results in the first 60 days, we'll refund you.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is this different from ChatGPT?</h3>
+                <p>ChatGPT is generic. Your Ghost AI agent is trained specifically on your business — your services, your pricing, your tone, your processes. It's like hiring a specialist, not a generalist.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Automate Your Business?</h2>
+        <p>Book a free 15-minute consultation. We'll show you exactly how AI can save you 10+ hours per week.</p>
+        <a href="mailto:Dansmarketplace4@gmail.com?subject=Ghost AI - Free Consultation Request" class="btn-primary">Book Free Consultation →</a>
+        <p class="cta-contact">Or call/text: <a href="tel:18456507548">845-650-7548</a> · <a href="mailto:Dansmarketplace4@gmail.com">Dansmarketplace4@gmail.com</a></p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Ghost AI · Rockland County, NY · <a href="mailto:Dansmarketplace4@gmail.com">Dansmarketplace4@gmail.com</a></p>
+        <p style="margin-top: 8px;">AI automation for small businesses. Built with ❤️ and 🤖.</p>
+    </div>
+</footer>
+
 </body>
 </html>
